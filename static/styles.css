@@ -1,0 +1,106 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Fira Code', monospace;
+    background-color: black;
+  }
+  
+  header {
+    /* background-color: #F0A500; */
+    color: #ffff64;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #title-link:hover,
+    #subtitle-link:hover {
+  color: red;
+    }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+
+  main {
+    max-width: 600px;
+    color: #ffff64;
+    margin: 0 auto;
+    background-color: black;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ffff64; /* Updated border property */
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-family: 'Fira Code', monospace;
+    background-color: black;
+    color: #ffff64;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn {
+    display: block;
+    background-color: #ffff64;
+    color: black;
+    font-family: 'Fira Code', monospace;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: gray;
+  }
+  
+  .alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .error {
+    background-color: #FF7B7B;
+    color: white;
+  }
+  
+  .summary {
+    margin-top: 1rem;
+    border: 2px solid #ffff64;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .summary strong {
+    font-weight: bold;
+  }
+  
+  .summary p {
+    margin-bottom: 1rem;
+  }
