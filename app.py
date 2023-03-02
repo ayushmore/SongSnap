@@ -20,7 +20,6 @@ def index():
         try:
             song = genius.search_song(title, artist)
             context = "You are a renowned expert in understanding and explaining the lyrics of popular songs. A major music magazine has asked you to provide an in-depth analysis of the lyrics of a new hit song that has taken the music world by storm. Your job is to break down the meaning of the song and explain the underlying themes and metaphors used by the songwriter. You must provide a detailed and insightful analysis that will leave the magazine's readers with a greater appreciation and understanding of the song."
-            prompt = f"Interpret and summarize the following lyrics of the song in three sentences. What is the overall message that {song.artist} is trying to convey? The lyrics are provided below in a JSON format:\n\n{{\"Lyrics\":  {song.lyrics}}}"
             prompt_refined = f"I'd like you to summarize the meaning of the lyrics of a different song that I'll provide. Your task is to listen to the song and identify the key themes and messages conveyed by the lyrics. You should then provide a brief summary of the lyrics that captures the essence of the song and the emotions it conveys. Your summary should be concise yet insightful, and should provide a clear understanding of the song's meaning to someone who may not be familiar with it. The song is {song.title} by {song.artist}. The lyrics are provided below in a JSON format:\n\n{{\"Lyrics\":  {song.lyrics}}}"
             response = openai.ChatCompletion.create(
                 model='gpt-3.5-turbo',
@@ -29,16 +28,8 @@ def index():
                     {"role": "user", "content": prompt_refined}
                  ]
             )
-            
-            # response = openai.Completion.create(
-            #                 engine='text-davinci-003',
-            #                 prompt=prompt,
-            #                 max_tokens=1024,
-            #                 n=1,
-            #                 stop=None,
-            #                 temperature=0.5)
             summary = response["choices"][0]["message"]["content"]
-            return render_template('index.html', summary=summary)
+            return render_template('index.html', summary=summary, title=title, artist=artist)
         except Exception as e:
             error = "Sorry!"
             return render_template('index.html', error=error)

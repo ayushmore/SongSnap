@@ -31,7 +31,8 @@
         <div class="alert error">{{ error }}</div>
       {% elif summary %}
         <div class="summary">
-          <h2>Summary</h2>
+          <h2>{{ title }} by {{ artist }}</h2>
+          <br>
           <p>{{ summary }}</p>
         </div>
       {% endif %}
