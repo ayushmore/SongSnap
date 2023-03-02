@@ -18,10 +18,9 @@
     margin-bottom: 2rem;
   }
 
-  #title-link:hover,
-    #subtitle-link:hover {
-  color: red;
-    }
+  header h1:hover, header h2:hover, header:hover h1, header:hover h2 {
+    color: white;
+  }
   
   h1 {
     font-size: 2.5rem;

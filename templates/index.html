@@ -12,8 +12,8 @@
   </head>
   <body>
     <header>
-      <h1><a href="/"></a>The Genius of Genius</h1>
-      <h2><a href="/"></a> Song Analysis in seconds</h2>
+      <h1 onclick="refreshPage()"><a href="#"></a>The Genius of Genius</h1>
+      <h2 onclick="refreshPage()"><a href="#"></a> Song Analysis in seconds</h2>
     </header>
     <main>
       <form method="POST" action="/">
@@ -25,6 +25,7 @@
           <label for="artist">Artist</label>
           <input type="text" id="artist" name="artist" autocomplete="off" required>
         </div>
+        <input type="hidden" name="submitted" value="true">
         <button type="submit" class="btn">Submit</button>
       </form>
       {% if error %}
@@ -37,5 +38,13 @@
         </div>
       {% endif %}
     </main>
+    <script>
+      function refreshPage() {
+      var summaryElement = document.querySelector('.summary');
+      if (summaryElement) {
+        summaryElement.style.display = 'none';
+      }
+    }
+    </script>
   </body>
 </html>

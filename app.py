@@ -15,6 +15,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        print("POST request")
         title = request.form['title']
         artist = request.form['artist']
         try:
@@ -31,8 +32,9 @@ def index():
             summary = response["choices"][0]["message"]["content"]
             return render_template('index.html', summary=summary, title=title, artist=artist)
         except Exception as e:
-            error = "Sorry!"
+            error = "Song does not exist! Check your spelling and try again."
             return render_template('index.html', error=error)
+    print("hello!!")
     return render_template('index.html')
 
 if __name__ == '__main__':
