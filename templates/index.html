@@ -14,21 +14,21 @@
   </head>
   <body>
     <header>
-      <h1 onclick="refreshPage()"><a href="#"></a>SongSnap</h1>
+      <h1 onclick="location.reload()"><a href="#"></a>SongSnap</h1>
       <div class="image-container"></div>
-        <img src="{{ url_for('static', filename='snap.png') }}" alt="Finger Snap icon">
+        <img src="{{ url_for('static', filename='snap.png') }}" alt="Finger Snap icon" onclick="location.reload()">
       </div>
-      <h2 onclick="refreshPage()"><a href="#"></a>Streamline your music experience with our lightning-fast song summarizer!</h2>
+      <h2 onclick="location.reload()"><a href="#"></a>Streamline your music experience with our lightning-fast song summarizer!</h2>
     </header>
     <main>
       <form method="POST" action="/">
         <div class="input-group">
           <label for="title">Song Title</label>
-          <input type="text" id="title" name="title" autocomplete="off" required>
+          <input type="text" id="title" name="title" autocomplete="off" required value="{{ title }}">
         </div>
         <div class="input-group">
           <label for="artist">Artist</label>
-          <input type="text" id="artist" name="artist" autocomplete="off" required>
+          <input type="text" id="artist" name="artist" autocomplete="off" required value="{{ artist }}">
         </div>
         <div class="input-group">
           <label for="length">Length</label>
@@ -51,13 +51,6 @@
         </div>
       {% endif %}
     </main>
-    <script>
-      function refreshPage() {
-      var summaryElement = document.querySelector('.summary');
-      if (summaryElement) {
-        summaryElement.style.display = 'none';
-      }
-    }
     </script>
   </body>
 </html>
