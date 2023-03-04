@@ -17,12 +17,9 @@ app.secret_key = os.getenv('APP_SECRET_KEY')
 def index():
     if request.method == 'POST':
         print("In the index POST!")
-        title = request.form['title']
-        session['title'] = title
-        artist = request.form['artist']
-        session['artist'] = artist
-        length = request.form['length']
-        session['length'] = length
+        session['title'] = request.form['title']
+        session['artist'] = request.form['artist']
+        session['length'] = request.form['length']
         return redirect(url_for('result'))
     
     session.clear()
