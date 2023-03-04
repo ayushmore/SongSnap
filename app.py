@@ -16,7 +16,6 @@ app.secret_key = os.getenv('APP_SECRET_KEY')
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        print("In the index POST!")
         session['title'] = request.form['title']
         session['artist'] = request.form['artist']
         session['length'] = request.form['length']
@@ -47,7 +46,7 @@ def result():
         session.clear()
         return render_template('index.html', summary=summary, title=title, artist=artist)
     except Exception as e:
-        error = "Song does not exist! Check your spelling and try again."
+        error = "Could not generate summary! See if your song is on Genius and type out the song title and artist as is."
         return render_template('index.html', error=error)
 
 if __name__ == '__main__':
