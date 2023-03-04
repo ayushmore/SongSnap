@@ -148,6 +148,12 @@
   .btn:hover {
     background-color: gray;
   }
+
+  @media screen and (max-width: 480px) {
+    .btn {
+      width: 100%;
+    }
+  }
   
   .alert {
     padding: 1rem;
