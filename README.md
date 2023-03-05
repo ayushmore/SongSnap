@@ -4,26 +4,26 @@ MySongSnap is a web application that allows users to enter the title and artist 
 ## Technologies Used
 MySongSnap is built using the following technologies:
 
-Python
-Flask
-HTML
-CSS
-JavaScript
-OpenAI API
-Genius API
-Vercel
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
+- OpenAI API
+- Genius API
+- Vercel
 
 ## Usage
-To use MySongSnap, simply go to mysongsnap.com and enter the title and artist of a song. Choose the length of the summary you want, and click "Summarize". The application will then generate a summary of the song lyrics.
+To use MySongSnap, simply go to mysongsnap.com and enter the title and artist of a song. Choose the length of the summary you want, and click "Generate". The application will then generate a summary of the song lyrics.
 
 ## Features
 MySongSnap comes with the following features:
 
-Summarize song lyrics
-Search for lyrics using the Genius API
-Customize summary length
-Clean and intuitive user interface
-Deployment on Vercel for easy access
+- Summarize song lyrics
+- Search for lyrics using the Genius API
+- Customize summary length
+- Clean and intuitive user interface
+- Deployment on Vercel for easy access
 
 
 ## How it Works
