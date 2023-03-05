@@ -46,16 +46,29 @@
             type="button">Sentence</button>
           <button class="length-button" value="a paragraph" onclick="lengthButtonClick(this)"
             type="button">Paragraph</button>
-          <button class="length-button" value="an essay of 15 or more sentences" onclick="lengthButtonClick(this)"
-            type="button">Essay</button>
+          <!-- <button class="length-button" value="an essay of 15 or more sentences" onclick="lengthButtonClick(this)"
+            type="button">Essay</button> -->
         </div>
         <input type="hidden" id="length" name="length" required value="">
       </div>
       <input type="hidden" name="submitted" value="true">
       <button type="submit" class="btn">Generate</button>
     </form>
+    <div id="loading-component" class="loading" style="display:none;">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p>Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
+    </div>    
     {% if error %}
-    <div class="alert error">{{ error }}</div>
+    <div class="error">
+      <h2>{{ title }} by {{ artist }}</h2>
+      <br>
+      <p>Could not generate summary! Check whether your song is on Genius by visiting this <a href='https://genius.com/search?q={{ title }} {{ artist }}' target='_blank' style='color: white; font-weight: bold; text-decoration: none;'>link</a>. Make sure to enter the song title and artist name exactly as they are. </p>
+      <br>
+    </div>
     {% elif summary %}
     <div class="summary">
       <h2>{{ title }} by {{ artist }}</h2>
@@ -66,5 +79,4 @@
   </main>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-
 </html>
